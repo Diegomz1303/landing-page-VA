@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Clínica Veterinaria Alvarez — Atención profesional con amor para tu mascota en Ica, Perú. Consultas, cirugías, vacunación, grooming y servicio a domicilio." />
+  <title>Clínica Veterinaria Alvarez | Ica, Perú</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ================================================
+     FLOATING WHATSAPP BUTTON
+================================================ -->
+<a href="https://wa.me/51956662849" target="_blank" rel="noopener" class="wa-float" aria-label="Escríbenos por WhatsApp">
+  <div class="wa-tooltip">¡Escríbenos!</div>
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ================================================
+     MOBILE NAVIGATION
+================================================ -->
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+  <button class="mobile-nav-close" id="mobileClose" aria-label="Cerrar menú">
+    <i class="fas fa-times"></i>
+  </button>
+  <a href="#inicio"    onclick="closeNav()">Inicio</a>
+  <a href="#servicios" onclick="closeNav()">Servicios</a>
+  <a href="#nosotros"  onclick="closeNav()">Nosotros</a>
+  <a href="#contacto"  onclick="closeNav()">Contacto</a>
+  <a href="#contacto"  onclick="closeNav()" class="btn btn-red" style="margin-top:8px;">
+    <i class="fas fa-calendar-check"></i> Agenda tu Cita
+  </a>
+</div>
+
+<!-- ================================================
+     NAVBAR
+================================================ -->
+<nav class="navbar" id="navbar" aria-label="Navegación principal">
+  <div class="container">
+    <div class="nav-inner">
+
+      <!-- Logo -->
+      <a href="#inicio" class="nav-logo" aria-label="Clínica Veterinaria Alvarez — Inicio">
+        <div class="nav-logo-img-wrap">
+          <img
+            src="imagenes-landing/logo.jpg"
+            alt="Clínica Veterinaria Alvarez"
+            class="nav-logo-img"
+          />
+        </div>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="nav-links">
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <!-- CTA -->
+      <a href="#contacto" class="nav-cta" aria-label="Agendar cita">
+        <i class="fas fa-calendar-check" aria-hidden="true"></i> Agenda tu Cita
+      </a>
+
+      <!-- Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+
+    </div>
+  </div>
+</nav>
+
+<!-- ================================================
+     HERO
+================================================ -->
+<section id="inicio" aria-label="Sección principal">
+
+  <div class="hero-dots" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob-1" aria-hidden="true"></div>
+  <div class="hero-blob hero-blob-2" aria-hidden="true"></div>
+
+  <!-- Decorative paw accents -->
+  <svg class="hero-paw-accent" style="top:12%;left:4%;width:80px;transform:rotate(-20deg);" viewBox="0 0 100 100" fill="white" aria-hidden="true">
+    <ellipse cx="50" cy="68" rx="24" ry="19"/>
+    <ellipse cx="25" cy="44" rx="12" ry="15" transform="rotate(-15 25 44)"/>
+    <ellipse cx="41" cy="31" rx="11" ry="14" transform="rotate(-5 41 31)"/>
+    <ellipse cx="59" cy="31" rx="11" ry="14" transform="rotate(5 59 31)"/>
+    <ellipse cx="75" cy="44" rx="12" ry="15" transform="rotate(15 75 44)"/>
+  </svg>
+  <svg class="hero-paw-accent" style="top:62%;left:1%;width:50px;transform:rotate(10deg);" viewBox="0 0 100 100" fill="white" aria-hidden="true">
+    <ellipse cx="50" cy="68" rx="24" ry="19"/>
+    <ellipse cx="25" cy="44" rx="12" ry="15" transform="rotate(-15 25 44)"/>
+    <ellipse cx="41" cy="31" rx="11" ry="14" transform="rotate(-5 41 31)"/>
+    <ellipse cx="59" cy="31" rx="11" ry="14" transform="rotate(5 59 31)"/>
+    <ellipse cx="75" cy="44" rx="12" ry="15" transform="rotate(15 75 44)"/>
+  </svg>
+
+  <!-- Large paw watermark -->
+  <svg class="hero-paw-watermark" viewBox="0 0 100 100" fill="white" aria-hidden="true">
+    <ellipse cx="50" cy="68" rx="24" ry="19"/>
+    <ellipse cx="25" cy="44" rx="12" ry="15" transform="rotate(-15 25 44)"/>
+    <ellipse cx="41" cy="31" rx="11" ry="14" transform="rotate(-5 41 31)"/>
+    <ellipse cx="59" cy="31" rx="11" ry="14" transform="rotate(5 59 31)"/>
+    <ellipse cx="75" cy="44" rx="12" ry="15" transform="rotate(15 75 44)"/>
+  </svg>
+
+  <div class="container">
+    <div class="hero-grid">
+
+      <!-- Left: content -->
+      <div class="hero-content">
+
+        <div class="hero-badge">
+          <span class="hero-badge-dot" aria-hidden="true"></span>
+          🏠 Servicio a Domicilio Disponible
+        </div>
+
+        <h1 class="hero-title">
+          Cuidamos a tu <em>mejor amigo</em><br>como parte de nuestra familia
+        </h1>
+
+        <p class="hero-sub">
+          Clínica Veterinaria Alvarez — Atención profesional con amor para tu mascota en Ica, Perú.
+          Equipo capacitado, instalaciones modernas y el cariño que tu peludito merece.
+        </p>
+
+        <div class="hero-btns">
+          <a href="#servicios" class="btn btn-white">
+            <i class="fas fa-paw" aria-hidden="true"></i> Ver Servicios
+          </a>
+          <a href="#contacto" class="btn btn-outline-white">
+            <i class="fas fa-phone" aria-hidden="true"></i> Contáctanos
+          </a>
+        </div>
+
+        <div class="hero-divider" aria-hidden="true"></div>
+
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">+25</div>
+            <div class="hero-stat-lbl">Años de experiencia</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">+5000</div>
+            <div class="hero-stat-lbl">Mascotas atendidas</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">8</div>
+            <div class="hero-stat-lbl">Servicios especializados</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: image -->
+      <div class="hero-img-col" aria-hidden="true">
+        <div class="hero-img-frame">
+          <img
+            src="imagenes-landing/publicidad_3.jpg"
+            alt="Servicio a domicilio — perros y gatos"
+            loading="eager"
+          />
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     SERVICES
+================================================ -->
+<section id="servicios" class="section">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <span class="section-tag">Nuestros Servicios</span>
+      <h2 class="section-title">Atención integral para tu mascota</h2>
+      <p class="section-sub">Ofrecemos servicios veterinarios especializados con la más alta calidad, tecnología avanzada y el cariño que tu mascota merece.</p>
+    </div>
+
+    <div class="services-grid" id="servicesGrid">
+
+      <article class="service-card">
+        <div class="svc-icon"><i class="fas fa-stethoscope" aria-hidden="true"></i></div>
+        <h3 class="svc-name">Consulta Médica</h3>
+        <p class="svc-desc">Diagnóstico profesional y seguimiento personalizado de la salud de tu mascota con nuestros especialistas.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="svc-icon"><i class="fas fa-star-of-life" aria-hidden="true"></i></div>
+        <h3 class="svc-name">Cirugías</h3>
+        <p class="svc-desc">Procedimientos quirúrgicos con equipo especializado y protocolos de seguridad estrictos para una recuperación óptima.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="svc-icon"><i class="fas fa-syringe" aria-hidden="true"></i></div>
+        <h3 class="svc-name">Vacunación</h3>
+        <p class="svc-desc">Esquemas de vacunación completos para perros y gatos, garantizando una protección duradera y efectiva.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="svc-icon"><i class="fas fa-hospital" aria-hidden="true"></i></div>
+        <h3 class="svc-name">Internamiento</h3>
+        <p class="svc-desc">Hospitalización con monitoreo constante las 24 horas del día en un ambiente seguro y confortable.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="svc-icon"><i class="fas fa-heart-pulse" aria-hidden="true"></i></div>
+        <h3 class="svc-name">Ecografías</h3>
+        <p class="svc-desc">Diagnóstico por imagen de última generación para evaluaciones internas precisas y sin dolor.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="svc-icon"><i class="fas fa-microscope" aria-hidden="true"></i></div>
+        <h3 class="svc-name">Análisis de Laboratorio</h3>
+        <p class="svc-desc">Estudios completos de sangre, orina y más, con resultados confiables para un diagnóstico certero.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="svc-icon"><i class="fas fa-shower" aria-hidden="true"></i></div>
+        <h3 class="svc-name">Baños Medicados</h3>
+        <p class="svc-desc">Tratamiento dermatológico especializado con productos de alta calidad para el cuidado de piel y pelaje.</p>
+      </article>
+
+      <article class="service-card">
+        <div class="svc-icon"><i class="fas fa-scissors" aria-hidden="true"></i></div>
+        <h3 class="svc-name">Cortes Estéticos</h3>
+        <p class="svc-desc">Grooming profesional para que tu mascota luzca increíble, se sienta cómoda y completamente feliz.</p>
+      </article>
+
+    </div>
+
+    <!-- Home-visit banner -->
+    <div class="home-visit-banner fade-up" style="transition-delay:.2s;">
+      <div class="banner-copy">
+        <p class="banner-title">🚗 Servicio a Domicilio en Ica</p>
+        <p class="banner-sub">Llevamos la atención veterinaria profesional hasta la puerta de tu hogar. Sin estrés de traslados para ti ni para tu mascota.</p>
+      </div>
+      <a href="#contacto" class="btn btn-white" style="flex-shrink:0;">
+        <i class="fas fa-map-marker-alt" aria-hidden="true"></i> Solicitar Servicio
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================
+     WHY CHOOSE US
+================================================ -->
+<section id="elegir" aria-label="Por qué elegirnos">
+  <div class="container">
+
+    <div class="section-header elegir-header fade-up">
+      <span class="section-tag">¿Por Qué Elegirnos?</span>
+      <h2 class="section-title">Comprometidos con el bienestar animal</h2>
+      <p class="section-sub">Brindando atención veterinaria de excelencia en Ica con profesionalismo, amor y dedicación total.</p>
+    </div>
+
+    <div class="stats-grid" id="statsGrid">
+
+      <div class="stat-card fade-up">
+        <div class="stat-icon-wrap"><i class="fas fa-award" aria-hidden="true"></i></div>
+        <div class="stat-number">
+          <span class="counter" data-target="25">0</span><span class="suffix">+</span>
+        </div>
+        <p class="stat-label">Años de Experiencia</p>
+        <p class="stat-desc">Brindando atención veterinaria profesional y confiable en Ica desde hace 25 años</p>
+      </div>
+
+      <div class="stat-card fade-up" style="transition-delay:.1s;">
+        <div class="stat-icon-wrap"><i class="fas fa-paw" aria-hidden="true"></i></div>
+        <div class="stat-number">
+          <span class="counter" data-target="5000">0</span><span class="suffix">+</span>
+        </div>
+        <p class="stat-label">Mascotas Atendidas</p>
+        <p class="stat-desc">Perros, gatos y mascotas exóticas que han recuperado su salud con nosotros en más de 25 años</p>
+      </div>
+
+      <div class="stat-card fade-up" style="transition-delay:.2s;">
+        <div class="stat-icon-wrap"><i class="fas fa-heart" aria-hidden="true"></i></div>
+        <div class="stat-number">
+          <span class="counter" data-target="100">0</span><span class="suffix">%</span>
+        </div>
+        <p class="stat-label">Dedicación Total</p>
+        <p class="stat-desc">Atención personalizada y cariñosa para cada paciente que llega a nuestras puertas</p>
+      </div>
+
+      <div class="stat-card fade-up" style="transition-delay:.3s;">
+        <div class="stat-icon-wrap"><i class="fas fa-house-chimney-medical" aria-hidden="true"></i></div>
+        <div class="stat-number">
+          <span class="counter" data-target="8">0</span>
+        </div>
+        <p class="stat-label">Servicios Disponibles</p>
+        <p class="stat-desc">Atención integral incluyendo servicio a domicilio en toda la ciudad de Ica</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     ABOUT
+================================================ -->
+<section id="nosotros" class="section">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Image column -->
+      <div class="about-img-wrap fade-in">
+        <div class="about-img-main">
+          <img
+            src="imagenes-landing/publicidad_1.jpg"
+            alt="Atendemos mascotas no convencionales y exóticas — Clínica Veterinaria Alvarez"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Floating experience badge -->
+        <div class="about-float-badge">
+          <div class="about-float-icon">
+            <i class="fas fa-certificate" aria-hidden="true"></i>
+          </div>
+          <div>
+            <span class="about-float-num">+25 Años</span>
+            <span class="about-float-lbl">De experiencia veterinaria</span>
+          </div>
+        </div>
+
+        <!-- Floating promo card (baño y corte) -->
+        <div class="about-promo-card">
+          <img
+            src="imagenes-landing/publicidad_2.jpg"
+            alt="Baño y corte — Clínica Veterinaria Alvarez"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Text column -->
+      <div class="about-text fade-up">
+        <span class="section-tag">Sobre Nosotros</span>
+        <h2 class="section-title">Pasión por la salud y el bienestar animal</h2>
+        <p class="about-p">
+          En Clínica Veterinaria Alvarez, nos dedicamos al cuidado integral de tus mascotas con profesionalismo, dedicación y mucho amor. Nuestro equipo de veterinarios altamente capacitados está comprometido con la salud y el bienestar de cada paciente.
+        </p>
+        <p class="about-p">
+          Atendemos todo tipo de mascotas: perros, gatos y también animales no convencionales y exóticos. Contamos con instalaciones modernas y equipos de diagnóstico de última tecnología. Porque para nosotros, tu mascota es parte de nuestra familia.
+        </p>
+
+        <ul class="about-features">
+          <li><span class="chk"><i class="fas fa-check" aria-hidden="true"></i></span> Equipo médico certificado y altamente capacitado</li>
+          <li><span class="chk"><i class="fas fa-check" aria-hidden="true"></i></span> Atendemos mascotas convencionales y exóticas</li>
+          <li><span class="chk"><i class="fas fa-check" aria-hidden="true"></i></span> Atención personalizada y trato cariñoso siempre</li>
+          <li><span class="chk"><i class="fas fa-check" aria-hidden="true"></i></span> Servicio a domicilio disponible en toda Ica</li>
+          <li><span class="chk"><i class="fas fa-check" aria-hidden="true"></i></span> Atención Lunes a Sábados de 9am a 7:30pm</li>
+        </ul>
+
+        <a href="#contacto" class="btn btn-red">
+          <i class="fas fa-phone-alt" aria-hidden="true"></i> Agendar mi Cita
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     TESTIMONIALS
+================================================ -->
+<section id="testimonios" class="section">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <span class="section-tag">Testimonios</span>
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <p class="section-sub">La satisfacción de quienes confían en nosotros en Ica es nuestra mayor recompensa y motivación cada día.</p>
+    </div>
+
+    <div class="testi-wrap fade-up" style="transition-delay:.1s;">
+      <div class="testi-track" id="testiTrack">
+
+        <article class="testi-card">
+          <div class="testi-stars" aria-label="5 de 5 estrellas">
+            <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+          </div>
+          <p class="testi-quote">Excelente atención para mi perro Rocky. El veterinario fue muy profesional y cariñoso. Se nota que aman genuinamente lo que hacen. ¡100% recomendados!</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">MG</div>
+            <div>
+              <p class="testi-name">María González</p>
+              <p class="testi-pet">Dueña de Rocky — Labrador, 3 años</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card">
+          <div class="testi-stars" aria-label="5 de 5 estrellas">
+            <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+          </div>
+          <p class="testi-quote">Mi gata necesitó cirugía urgente y el equipo fue increíble. La atención fue rápida, eficiente y muy humana. Estoy eternamente agradecida por salvar a mi bebé.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">CR</div>
+            <div>
+              <p class="testi-name">Carlos Ramírez</p>
+              <p class="testi-pet">Dueño de Luna — Gata siamesa, 5 años</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card">
+          <div class="testi-stars" aria-label="5 de 5 estrellas">
+            <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+          </div>
+          <p class="testi-quote">El servicio a domicilio es fantástico. No podía transportar a mi perro grande y vinieron a casa. Súper profesionales, puntuales y con mucho cariño. ¡Los recomiendo!</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">AL</div>
+            <div>
+              <p class="testi-name">Ana López</p>
+              <p class="testi-pet">Dueña de Thor — Pastor Alemán, 7 años</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card">
+          <div class="testi-stars" aria-label="5 de 5 estrellas">
+            <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i><i class="fas fa-star" aria-hidden="true"></i>
+            <i class="fas fa-star" aria-hidden="true"></i>
+          </div>
+          <p class="testi-quote">Llevamos a toda nuestra familia de mascotas aquí. El trato es espectacular, las instalaciones impecables. Sin duda la mejor clínica veterinaria de Ica.</p>
+          <div class="testi-author">
+            <div class="testi-avatar" aria-hidden="true">JP</div>
+            <div>
+              <p class="testi-name">Juan Pérez</p>
+              <p class="testi-pet">Dueño de 3 adorables mascotas</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="carousel-controls">
+        <button class="c-btn" id="testiPrev" aria-label="Anterior testimonio">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        <div class="c-dots" id="testiDots" role="tablist" aria-label="Navegación de testimonios">
+          <div class="c-dot active" role="tab" aria-selected="true"  aria-label="Posición 1" data-i="0"></div>
+          <div class="c-dot"        role="tab" aria-selected="false" aria-label="Posición 2" data-i="1"></div>
+          <div class="c-dot"        role="tab" aria-selected="false" aria-label="Posición 3" data-i="2"></div>
+        </div>
+        <button class="c-btn" id="testiNext" aria-label="Siguiente testimonio">
+          <i class="fas fa-arrow-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================
+     CONTACT
+================================================ -->
+<section id="contacto" class="section">
+  <div class="container">
+
+    <div class="section-header fade-up">
+      <span class="section-tag">Contacto</span>
+      <h2 class="section-title">¿Tu mascota necesita atención?</h2>
+      <p class="section-sub">Contáctanos por el medio que prefieras. Respondemos rápido para atender a tu compañero con la urgencia que merece.</p>
+    </div>
+
+    <div class="contact-grid">
+
+      <!-- Info column -->
+      <div class="slide-right">
+        <h3 class="contact-headline">Estamos aquí para<br>ayudarte siempre</h3>
+        <p class="contact-desc">Agenda una consulta, solicita el servicio a domicilio o consúltanos cualquier duda. Tu mascota está en las mejores manos.</p>
+
+        <div class="contact-items">
+
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fas fa-phone-alt" aria-hidden="true"></i></div>
+            <div>
+              <p class="contact-item-lbl">Teléfono / WhatsApp</p>
+              <p class="contact-item-val">956 662 849</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fab fa-facebook-f" aria-hidden="true"></i></div>
+            <div>
+              <p class="contact-item-lbl">Facebook</p>
+              <p class="contact-item-val">
+                <a href="https://www.facebook.com/VeterinariaenIca" target="_blank" rel="noopener" style="color:var(--red);">
+                  Clínica Veterinaria Alvarez
+                </a>
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+            <div>
+              <p class="contact-item-lbl">Dirección</p>
+              <p class="contact-item-val">Calle Castrovirreyna N° 474<br>Ica, Perú, 11002</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon"><i class="fas fa-clock" aria-hidden="true"></i></div>
+            <div>
+              <p class="contact-item-lbl">Horario de Atención</p>
+              <p class="contact-item-val">Lunes a Sábados<br>9:00 am – 7:30 pm</p>
+            </div>
+          </div>
+
+        </div>
+
+        <a href="https://wa.me/51956662849" target="_blank" rel="noopener" class="btn btn-green" style="font-size:1rem;padding:16px 32px;">
+          <i class="fab fa-whatsapp" aria-hidden="true"></i> Escríbenos por WhatsApp
+        </a>
+
+        <!-- Google Maps embed -->
+        <div class="map-embed">
+          <iframe
+            src="https://maps.google.com/maps?q=Calle+Castrovirreyna+474,+Ica,+Peru&output=embed"
+            title="Ubicación Clínica Veterinaria Alvarez — Calle Castrovirreyna N° 474, Ica"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Form column -->
+      <div class="contact-form fade-up" style="transition-delay:.15s;">
+        <h3 class="form-title">Agenda tu Cita</h3>
+        <p class="form-sub">Completa el formulario y nos pondremos en contacto contigo a la brevedad posible.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="f-name">Tu Nombre</label>
+              <input id="f-name" type="text" placeholder="Ej: María González" autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="f-phone">Teléfono</label>
+              <input id="f-phone" type="tel" placeholder="Ej: 956 662 849" autocomplete="tel" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="f-pet">Nombre de tu Mascota</label>
+            <input id="f-pet" type="text" placeholder="Ej: Rocky" />
+          </div>
+
+          <div class="form-group">
+            <label for="f-type">Tipo de Mascota</label>
+            <select id="f-type">
+              <option value="">Selecciona una opción</option>
+              <option value="perro">Perro</option>
+              <option value="gato">Gato</option>
+              <option value="exotica">Mascota Exótica</option>
+              <option value="otro">Otro</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="f-msg">Motivo de Consulta</label>
+            <textarea id="f-msg" placeholder="Describe brevemente la situación de tu mascota…"></textarea>
+          </div>
+
+          <button type="submit" class="form-btn">
+            <i class="fas fa-paper-plane" aria-hidden="true"></i> Enviar Mensaje
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================================================
+     FOOTER
+================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div>
+        <a href="#inicio" aria-label="Clínica Veterinaria Alvarez — Inicio">
+          <div class="footer-logo-wrap">
+            <img src="imagenes-landing/logo.jpg" alt="Clínica Veterinaria Alvarez" />
+          </div>
+        </a>
+        <p class="footer-tagline">
+          Dedicados al cuidado integral de tus mascotas en Ica, Perú. Profesionalismo, dedicación y mucho amor. Porque tu mascota es parte de nuestra familia.
+        </p>
+        <div class="socials">
+          <a href="https://www.facebook.com/VeterinariaenIca" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">
+            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          </a>
+          <a href="https://wa.me/51956662849" target="_blank" rel="noopener" class="social-btn" aria-label="WhatsApp">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation links -->
+      <div>
+        <p class="footer-col-title">Navegación</p>
+        <ul class="footer-links">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Services links -->
+      <div>
+        <p class="footer-col-title">Servicios</p>
+        <ul class="footer-links">
+          <li><a href="#servicios">Consulta Médica</a></li>
+          <li><a href="#servicios">Cirugías</a></li>
+          <li><a href="#servicios">Vacunación</a></li>
+          <li><a href="#servicios">Internamiento</a></li>
+          <li><a href="#servicios">Ecografías</a></li>
+          <li><a href="#servicios">Baños y Grooming</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact info -->
+      <div>
+        <p class="footer-col-title">Contacto</p>
+        <div class="footer-contact-row">
+          <i class="fas fa-phone-alt" aria-hidden="true"></i>
+          <span>956 662 849</span>
+        </div>
+        <div class="footer-contact-row">
+          <i class="fab fa-facebook-f" aria-hidden="true"></i>
+          <span>Clínica Veterinaria Alvarez</span>
+        </div>
+        <div class="footer-contact-row">
+          <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+          <span>Calle Castrovirreyna N° 474<br>Ica, Perú, 11002</span>
+        </div>
+        <div class="footer-contact-row">
+          <i class="fas fa-clock" aria-hidden="true"></i>
+          <span>Lun – Sáb: 9:00 am – 7:30 pm</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-divider" aria-hidden="true"></div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        © 2026 <span>Clínica Veterinaria Alvarez</span> — Ica, Perú — Todos los derechos reservados
+      </p>
+      <div class="footer-legal">
+        <a href="#">Aviso de Privacidad</a>
+        <a href="#">Términos de Uso</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Script -->
+<script src="script.js"></script>
+
+</body>
+</html>
