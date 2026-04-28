@@ -100,7 +100,6 @@ if (contactForm) {
     e.preventDefault();
 
     const name   = document.getElementById('f-name').value.trim();
-    const phone  = document.getElementById('f-phone').value.trim();
     const pet    = document.getElementById('f-pet').value.trim();
     const typeEl = document.getElementById('f-type');
     const type   = typeEl.options[typeEl.selectedIndex].text;
@@ -111,8 +110,7 @@ if (contactForm) {
 
     const text =
       `🐾 *Cita - Clínica Veterinaria Alvarez*\n\n` +
-      `👤 *Nombre:* ${name || '—'}\n` +
-      `📞 *Teléfono:* ${phone || '—'}\n` +
+      `👤 *Propietario:* ${name || '—'}\n` +
       `🐶 *Mascota:* ${pet || '—'}\n` +
       `🏷️ *Especie:* ${type === 'Selecciona una opción' ? '—' : type}\n` +
       `⚥ *Sexo:* ${sex || '—'}\n` +
