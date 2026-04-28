@@ -131,6 +131,31 @@ if (contactForm) {
   });
 }
 
+/* ── ABOUT CAROUSEL ──────────────────────────────── */
+const aboutSlides = document.querySelectorAll('.about-slide');
+const aboutDots   = document.querySelectorAll('.about-dot');
+let aboutCurrent  = 0;
+let aboutTimer;
+
+function goToAbout(idx) {
+  aboutSlides[aboutCurrent].classList.remove('active');
+  aboutDots[aboutCurrent].classList.remove('active');
+  aboutCurrent = (idx + aboutSlides.length) % aboutSlides.length;
+  aboutSlides[aboutCurrent].classList.add('active');
+  aboutDots[aboutCurrent].classList.add('active');
+}
+
+function startAboutTimer() {
+  aboutTimer = setInterval(() => goToAbout(aboutCurrent + 1), 4000);
+}
+function resetAboutTimer() { clearInterval(aboutTimer); startAboutTimer(); }
+
+document.getElementById('aboutNext').addEventListener('click', () => { goToAbout(aboutCurrent + 1); resetAboutTimer(); });
+document.getElementById('aboutPrev').addEventListener('click', () => { goToAbout(aboutCurrent - 1); resetAboutTimer(); });
+aboutDots.forEach(d => d.addEventListener('click', () => { goToAbout(+d.dataset.i); resetAboutTimer(); }));
+
+startAboutTimer();
+
 /* ── MODALS ──────────────────────────────────────── */
 function openModal(id) {
   const modal = document.getElementById(id);
