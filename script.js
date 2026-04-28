@@ -52,7 +52,7 @@ const io = new IntersectionObserver((entries) => {
       io.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
 
 document.querySelectorAll('.fade-up, .fade-in, .slide-right').forEach(el => io.observe(el));
 
@@ -128,6 +128,15 @@ if (contactForm) {
       btn.disabled = false;
       contactForm.reset();
     }, 3500);
+  });
+}
+
+/* ── MAPA FACADE ─────────────────────────────────── */
+const mapaBtn = document.getElementById('mapaBtn');
+if (mapaBtn) {
+  mapaBtn.addEventListener('click', () => {
+    const col = document.getElementById('mapaCol');
+    col.innerHTML = '<iframe src="https://maps.google.com/maps?q=Calle+Castrovirreyna+474,+Ica,+Peru&output=embed" title="Ubicación Clínica Veterinaria Alvarez" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width:100%;height:100%;display:block;border:none;"></iframe>';
   });
 }
 

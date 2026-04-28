@@ -37,15 +37,21 @@
   <link rel="preload" as="image" href="imagenes-landing/publicidad_3.jpg" />
   <link rel="preload" as="image" href="imagenes-landing/publicidad_1.jpg" />
 
-  <!-- Google Fonts -->
+  <!-- Google Fonts (no bloquea render) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  </noscript>
 
-  <!-- Font Awesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Font Awesome 6 (no bloquea render) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    media="print" onload="this.media='all'" />
+  <noscript>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  </noscript>
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
@@ -487,13 +493,18 @@
 
       <div class="ubicacion-grid">
 
-        <!-- Mapa -->
-        <div class="ubicacion-mapa-col fade-in">
-          <iframe
-            src="https://maps.google.com/maps?q=Calle+Castrovirreyna+474,+Ica,+Peru&output=embed"
-            title="Ubicación Clínica Veterinaria Alvarez — Calle Castrovirreyna N° 474, Ica"
-            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
+        <!-- Mapa (carga al hacer clic para mayor velocidad) -->
+        <div class="ubicacion-mapa-col fade-in" id="mapaCol">
+          <div class="mapa-facade" id="mapaFacade">
+            <div class="mapa-facade-inner">
+              <div class="mapa-facade-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <p class="mapa-facade-title">Clínica Veterinaria Alvarez</p>
+              <p class="mapa-facade-addr">Calle Castrovirreyna N° 474, Ica, Perú</p>
+              <button class="mapa-facade-btn" id="mapaBtn">
+                <i class="fas fa-map"></i> Ver en Google Maps
+              </button>
+            </div>
+          </div>
         </div>
 
         <!-- Tarjetas de info -->
