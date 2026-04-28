@@ -1172,12 +1172,12 @@ footer {
 ================================================ */
 .chat-widget {
   position: fixed;
-  bottom: 30px;
-  left: 30px;
+  bottom: 100px;
+  right: 30px;
   z-index: 998;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 12px;
 }
 
@@ -1207,7 +1207,7 @@ footer {
 .chat-widget.open .chat-toggle { animation: none; }
 
 .chat-window {
-  width: 320px;
+  width: 360px;
   background: var(--white);
   border-radius: var(--radius-xl);
   box-shadow: 0 20px 60px rgba(0,0,0,.18);
@@ -1351,8 +1351,9 @@ footer {
 }
 .chat-qr-back:hover { color: var(--red); background: transparent; border-color: transparent; }
 
-@media (max-width: 400px) {
-  .chat-window { width: 290px; }
+@media (max-width: 480px) {
+  .chat-widget { right: 12px; bottom: 100px; }
+  .chat-window { width: calc(100vw - 24px); }
 }
 
 /* ================================================
