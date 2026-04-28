@@ -1250,5 +1250,39 @@ footer {
   .stats-grid    { grid-template-columns: 1fr; }
   .hero-btns     { flex-direction: column; }
   .hero-btns .btn{ justify-content: center; }
-  .testi-card    { flex: 0 0 100%; }
+}
+
+/* ================================================
+   PERFORMANCE EN MÓVIL
+================================================ */
+@media (max-width: 768px) {
+  /* Animaciones más rápidas y ligeras */
+  .fade-up {
+    transform: translateY(16px);
+    transition: opacity .45s ease, transform .45s ease;
+  }
+  .fade-in {
+    transition: opacity .45s ease;
+  }
+  .slide-right {
+    transform: translateX(-20px);
+    transition: opacity .45s ease, transform .45s ease;
+  }
+
+  /* Desactiva efectos costosos en móvil */
+  .navbar {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .hero-blob-1,
+  .hero-blob-2 {
+    display: none;
+  }
+  .hero-dots {
+    display: none;
+  }
+  .stat-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 }
