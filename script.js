@@ -92,70 +92,6 @@ const counterIO = new IntersectionObserver(entries => {
 }, { threshold: 0.25 });
 counterIO.observe(statsGrid);
 
-/* ── TESTIMONIALS CAROUSEL ───────────────────────── */
-const track = document.getElementById('testiTrack');
-const dots  = document.querySelectorAll('.c-dot');
-let current = 0;
-let autoTimer;
-
-function getVisible() {
-  const w = window.innerWidth;
-  if (w < 540)  return 1;
-  if (w < 900)  return 2;
-  return 3;
-}
-
-function goTo(idx) {
-  const cards   = track.children;
-  const visible = getVisible();
-  const max     = Math.max(0, cards.length - visible);
-  current = Math.max(0, Math.min(idx, max));
-
-  const cardW = cards[0].offsetWidth + 22; // card width + gap
-  track.style.transform = `translateX(-${current * cardW}px)`;
-
-  dots.forEach((d, i) => {
-    const active = i === current;
-    d.classList.toggle('active', active);
-    d.setAttribute('aria-selected', String(active));
-  });
-}
-
-document.getElementById('testiNext').addEventListener('click', () => {
-  const visible = getVisible();
-  const max     = Math.max(0, track.children.length - visible);
-  goTo(current >= max ? 0 : current + 1);
-  resetTimer();
-});
-
-document.getElementById('testiPrev').addEventListener('click', () => {
-  const visible = getVisible();
-  const max     = Math.max(0, track.children.length - visible);
-  goTo(current <= 0 ? max : current - 1);
-  resetTimer();
-});
-
-dots.forEach(d => {
-  d.addEventListener('click', () => { goTo(parseInt(d.dataset.i, 10)); resetTimer(); });
-});
-
-function startTimer() {
-  autoTimer = setInterval(() => {
-    const visible = getVisible();
-    const max = Math.max(0, track.children.length - visible);
-    goTo(current >= max ? 0 : current + 1);
-  }, 4500);
-}
-
-function resetTimer() {
-  clearInterval(autoTimer);
-  startTimer();
-}
-
-startTimer();
-track.addEventListener('mouseenter', () => clearInterval(autoTimer));
-track.addEventListener('mouseleave', startTimer);
-window.addEventListener('resize', () => goTo(current), { passive: true });
 
 /* ── CONTACT FORM → WHATSAPP ─────────────────────── */
 const contactForm = document.getElementById('contactForm');
@@ -194,6 +130,40 @@ if (contactForm) {
     }, 3500);
   });
 }
+
+/* ── MODALS ──────────────────────────────────────── */
+function openModal(id) {
+  const modal = document.getElementById(id);
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('linkPrivacidad').addEventListener('click', e => {
+  e.preventDefault();
+  openModal('modalPrivacidad');
+});
+
+document.getElementById('linkTerminos').addEventListener('click', e => {
+  e.preventDefault();
+  openModal('modalTerminos');
+});
+
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.querySelector('.modal-close').addEventListener('click', () => closeModal(overlay.id));
+  overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(overlay.id); });
+});
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    document.querySelectorAll('.modal-overlay.open').forEach(m => closeModal(m.id));
+  }
+});
 
 /* ── HERO PARALLAX (subtle) ──────────────────────── */
 const heroDots = document.querySelector('.hero-dots');
