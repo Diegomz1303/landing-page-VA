@@ -316,7 +316,7 @@ img { max-width: 100%; }
   position: absolute;
   right: -60px; bottom: -60px;
   width: 480px; height: 480px;
-  opacity: .04;
+  opacity: .13;
   pointer-events: none;
 }
 
@@ -344,7 +344,7 @@ img { max-width: 100%; }
 
 .hero-paw-accent {
   position: absolute;
-  opacity: .07;
+  opacity: .18;
   pointer-events: none;
 }
 
@@ -1026,15 +1026,13 @@ img { max-width: 100%; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 
 .pet-extra {
-  display: grid;
-  grid-template-rows: 0fr;
+  max-height: 0;
   opacity: 0;
-  transition: grid-template-rows .4s ease, opacity .4s ease;
   overflow: hidden;
+  transition: max-height .45s ease, opacity .35s ease;
 }
-.pet-extra > * { min-height: 0; }
 .pet-extra.visible {
-  grid-template-rows: 1fr;
+  max-height: 400px;
   opacity: 1;
 }
 
