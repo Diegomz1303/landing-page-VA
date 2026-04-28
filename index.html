@@ -711,7 +711,19 @@
 
             <div class="form-group">
               <label for="f-msg">Motivo de Consulta</label>
-              <textarea id="f-msg" placeholder="Describe brevemente la situación de tu mascota…"></textarea>
+              <div class="motivo-chips">
+                <button type="button" class="motivo-chip" data-value="Consulta Médica">🩺 Consulta Médica</button>
+                <button type="button" class="motivo-chip" data-value="Vacunación">💉 Vacunación</button>
+                <button type="button" class="motivo-chip" data-value="Cirugía">🏥 Cirugía</button>
+                <button type="button" class="motivo-chip" data-value="Ecografía">❤️ Ecografía</button>
+                <button type="button" class="motivo-chip" data-value="Análisis de Laboratorio">🔬 Análisis de Lab.</button>
+                <button type="button" class="motivo-chip" data-value="Baño y Corte">✂️ Baño y Corte</button>
+                <button type="button" class="motivo-chip" data-value="Internamiento">🏨 Internamiento</button>
+                <button type="button" class="motivo-chip" data-value="Atención Animal Exótico">🦎 Animal Exótico</button>
+                <button type="button" class="motivo-chip" data-value="Servicio a Domicilio">🚗 Servicio a Domicilio</button>
+                <button type="button" class="motivo-chip" data-value="Promoción Bunny">🐰 Promo Bunny</button>
+              </div>
+              <textarea id="f-msg" placeholder="Selecciona una opción o describe la situación de tu mascota…"></textarea>
             </div>
 
             <button type="submit" class="form-btn">
@@ -818,6 +830,34 @@
 
     </div>
   </footer>
+
+  <!-- ================================================
+     CHAT FLOTANTE
+================================================ -->
+  <div class="chat-widget" id="chatWidget">
+
+    <div class="chat-window" id="chatWindow" aria-live="polite">
+      <div class="chat-header">
+        <div class="chat-avatar">🐾</div>
+        <div class="chat-header-info">
+          <p class="chat-header-name">Asistente Virtual</p>
+          <p class="chat-header-clinic">Clínica Veterinaria Alvarez</p>
+        </div>
+        <button class="chat-close" id="chatClose" aria-label="Cerrar chat">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="chat-messages" id="chatMessages"></div>
+
+      <div class="chat-quick-replies" id="chatReplies"></div>
+    </div>
+
+    <button class="chat-toggle" id="chatToggle" aria-label="Abrir chat de ayuda">
+      <i class="fas fa-comment-dots chat-icon-open"></i>
+      <i class="fas fa-times chat-icon-close"></i>
+    </button>
+  </div>
 
   <!-- ================================================
      MODAL: AVISO DE PRIVACIDAD

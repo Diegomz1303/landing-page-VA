@@ -135,6 +135,138 @@ if (contactForm) {
   });
 }
 
+/* ── CHAT FLOTANTE ───────────────────────────────── */
+const chatWidget  = document.getElementById('chatWidget');
+const chatToggle  = document.getElementById('chatToggle');
+const chatClose   = document.getElementById('chatClose');
+const chatMessages = document.getElementById('chatMessages');
+const chatReplies  = document.getElementById('chatReplies');
+
+const faqs = [
+  {
+    q: '💰 ¿Cuánto cuesta la consulta?',
+    a: 'Nuestros precios de consulta son:\n🐾 Perros y gatos: S/ 30\n🦎 Animales exóticos: S/ 40\n\n¡Te esperamos!'
+  },
+  {
+    q: '📍 ¿Dónde están ubicados?',
+    a: 'Nos encontramos en:\n📌 Calle Castrovirreyna N° 474\nIca, Perú 11002\n\n¡Fácil de encontrar en el centro de Ica!'
+  },
+  {
+    q: '🕐 ¿Cuál es el horario?',
+    a: 'Atendemos:\n📅 Lunes a Sábado\n⏰ 9:00 am – 7:30 pm\n\nDomingos cerrado.'
+  },
+  {
+    q: '🚗 ¿Hacen servicio a domicilio?',
+    a: '¡Sí! Ofrecemos servicio veterinario a domicilio en toda la ciudad de Ica. 🏠\n\nEscríbenos por WhatsApp para coordinar.'
+  },
+  {
+    q: '🦎 ¿Atienden animales exóticos?',
+    a: '¡Sí! Es nuestra nueva especialidad. 🌟\n\nAtendemos: conejos, hamsters, reptiles, aves y más animales no convencionales.'
+  },
+  {
+    q: '✂️ ¿Cuánto cuesta el baño y corte?',
+    a: 'El precio varía según el tamaño y raza de tu mascota. 🛁\n\nEscríbenos por WhatsApp con una foto de tu peludito y te damos el precio exacto.'
+  },
+  {
+    q: '📅 ¿Cómo agendo una cita?',
+    a: 'Puedes agendar tu cita de dos formas:\n\n1️⃣ Llena el formulario en esta página\n2️⃣ Escríbenos directo al WhatsApp: 956 662 849'
+  },
+  {
+    q: '🐰 ¿En qué consiste la Promo Bunny?',
+    a: 'La Promo Bunny incluye atención especializada para conejos y animales pequeños. 🐾\n\nEscríbenos al WhatsApp para conocer todos los detalles y precio.'
+  },
+  {
+    q: '🚨 ¿Atienden emergencias?',
+    a: 'Para emergencias contáctanos de inmediato:\n📞 956 662 849\n\nHaremos todo lo posible por atenderte a la brevedad. 💙'
+  }
+];
+
+function addMsg(text, type) {
+  const msg = document.createElement('div');
+  msg.className = `chat-msg ${type}`;
+  if (type === 'bot') {
+    msg.innerHTML = `<div class="chat-msg-icon">🐾</div><div class="chat-msg-bubble">${text}</div>`;
+  } else {
+    msg.innerHTML = `<div class="chat-msg-bubble">${text}</div>`;
+  }
+  chatMessages.appendChild(msg);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
+
+function showMainReplies() {
+  chatReplies.innerHTML = '';
+  faqs.forEach((faq, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'chat-qr-btn';
+    btn.textContent = faq.q;
+    btn.addEventListener('click', () => {
+      addMsg(faq.q, 'user');
+      chatReplies.innerHTML = '';
+      setTimeout(() => {
+        addMsg(faq.a, 'bot');
+        setTimeout(showBackBtn, 400);
+      }, 300);
+    });
+    chatReplies.appendChild(btn);
+  });
+}
+
+function showBackBtn() {
+  chatReplies.innerHTML = '';
+  const back = document.createElement('button');
+  back.className = 'chat-qr-btn chat-qr-back';
+  back.textContent = '← Ver todas las preguntas';
+  back.addEventListener('click', showMainReplies);
+  chatReplies.appendChild(back);
+
+  const wa = document.createElement('button');
+  wa.className = 'chat-qr-btn';
+  wa.style.cssText = 'background:#25d366;color:#fff;border-color:#25d366;width:100%;justify-content:center;';
+  wa.innerHTML = '💬 Hablar por WhatsApp';
+  wa.addEventListener('click', () => window.open('https://wa.me/51956662849', '_blank', 'noopener'));
+  chatReplies.appendChild(wa);
+}
+
+function openChat() {
+  chatWidget.classList.add('open');
+  if (!chatMessages.children.length) {
+    setTimeout(() => {
+      addMsg('¡Hola! 👋 Soy el asistente de Clínica Veterinaria Alvarez.\n\n¿En qué puedo ayudarte hoy?', 'bot');
+      setTimeout(showMainReplies, 400);
+    }, 200);
+  }
+}
+
+chatToggle.addEventListener('click', () => {
+  chatWidget.classList.contains('open') ? chatWidget.classList.remove('open') : openChat();
+});
+chatClose.addEventListener('click', () => chatWidget.classList.remove('open'));
+
+/* ── CHIPS MOTIVO CONSULTA ───────────────────────── */
+const chips   = document.querySelectorAll('.motivo-chip');
+const msgArea = document.getElementById('f-msg');
+
+if (chips.length && msgArea) {
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chip.classList.toggle('active');
+      const selected = [...chips]
+        .filter(c => c.classList.contains('active'))
+        .map(c => c.dataset.value)
+        .join(', ');
+      msgArea.value = selected;
+      msgArea.focus();
+    });
+  });
+
+  msgArea.addEventListener('input', () => {
+    const manual = msgArea.value;
+    chips.forEach(chip => {
+      chip.classList.toggle('active', manual.includes(chip.dataset.value));
+    });
+  });
+}
+
 /* ── CAMPOS EXTRA MASCOTA ────────────────────────── */
 const petInput  = document.getElementById('f-pet');
 const petExtra  = document.getElementById('petExtra');
