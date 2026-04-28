@@ -99,19 +99,25 @@ if (contactForm) {
   contactForm.addEventListener('submit', e => {
     e.preventDefault();
 
-    const name  = document.getElementById('f-name').value.trim();
-    const phone = document.getElementById('f-phone').value.trim();
-    const pet   = document.getElementById('f-pet').value.trim();
+    const name   = document.getElementById('f-name').value.trim();
+    const phone  = document.getElementById('f-phone').value.trim();
+    const pet    = document.getElementById('f-pet').value.trim();
     const typeEl = document.getElementById('f-type');
-    const type  = typeEl.options[typeEl.selectedIndex].text;
-    const msg   = document.getElementById('f-msg').value.trim();
+    const type   = typeEl.options[typeEl.selectedIndex].text;
+    const sex    = document.getElementById('f-sex').value;
+    const age    = document.getElementById('f-age').value;
+    const size   = document.getElementById('f-size').value;
+    const msg    = document.getElementById('f-msg').value.trim();
 
     const text =
-      `🐾 *Nueva Cita - Clínica Veterinaria Alvarez*\n\n` +
+      `🐾 *Cita - Clínica Veterinaria Alvarez*\n\n` +
       `👤 *Nombre:* ${name || '—'}\n` +
       `📞 *Teléfono:* ${phone || '—'}\n` +
       `🐶 *Mascota:* ${pet || '—'}\n` +
-      `🏷️ *Tipo:* ${type === 'Selecciona una opción' ? '—' : type}\n` +
+      `🏷️ *Especie:* ${type === 'Selecciona una opción' ? '—' : type}\n` +
+      `⚥ *Sexo:* ${sex || '—'}\n` +
+      `🎂 *Edad:* ${age || '—'}\n` +
+      `📏 *Tamaño:* ${size || '—'}\n` +
       `📋 *Motivo:* ${msg || '—'}`;
 
     const url = `https://wa.me/51956662849?text=${encodeURIComponent(text)}`;
@@ -128,6 +134,15 @@ if (contactForm) {
       btn.disabled = false;
       contactForm.reset();
     }, 3500);
+  });
+}
+
+/* ── CAMPOS EXTRA MASCOTA ────────────────────────── */
+const petInput  = document.getElementById('f-pet');
+const petExtra  = document.getElementById('petExtra');
+if (petInput && petExtra) {
+  petInput.addEventListener('input', () => {
+    petExtra.classList.toggle('visible', petInput.value.trim().length > 0);
   });
 }
 
