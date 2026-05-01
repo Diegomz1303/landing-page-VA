@@ -1196,9 +1196,9 @@ footer {
 }
 .chat-toggle:hover { transform: scale(1.1); animation: none; }
 @keyframes chat-pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(227,27,35,.45); }
-  70%  { box-shadow: 0 0 0 16px rgba(227,27,35,0); }
-  100% { box-shadow: 0 0 0 0 rgba(227,27,35,0); }
+  0%   { transform: scale(1);   opacity: .7; }
+  70%  { transform: scale(1.5); opacity: 0; }
+  100% { transform: scale(1.5); opacity: 0; }
 }
 
 .chat-icon-close { display: none; }
@@ -1491,9 +1491,9 @@ footer {
 .wa-float:hover .wa-tooltip { opacity: 1; transform: translateX(0); }
 
 @keyframes wa-pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(37,211,102,.45); }
-  70%  { box-shadow: 0 0 0 18px rgba(37,211,102,0); }
-  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+  0%   { transform: scale(1);   opacity: .7; }
+  70%  { transform: scale(1.55); opacity: 0; }
+  100% { transform: scale(1.55); opacity: 0; }
 }
 
 /* ================================================
