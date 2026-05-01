@@ -6,3 +6,4 @@ deployment:
     - /bin/cp script.js $DEPLOYPATH
     - /bin/cp styles.css $DEPLOYPATH
     - /bin/cp -R imagenes-landing $DEPLOYPATH
+    - /bin/cp sitemap.xml $DEPLOYPATH
