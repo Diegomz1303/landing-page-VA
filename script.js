@@ -99,26 +99,31 @@ if (contactForm) {
   contactForm.addEventListener('submit', e => {
     e.preventDefault();
 
-    const name   = document.getElementById('f-name').value.trim();
-    const pet    = document.getElementById('f-pet').value.trim();
-    const typeEl = document.getElementById('f-type');
-    const type   = typeEl.options[typeEl.selectedIndex].text;
-    const sex    = document.getElementById('f-sex').value;
-    const age    = document.getElementById('f-age').value;
-    const size   = document.getElementById('f-size').value;
-    const msg    = document.getElementById('f-msg').value.trim();
+    const name      = document.getElementById('f-name').value.trim();
+    const pet       = document.getElementById('f-pet').value.trim();
+    const typeEl    = document.getElementById('f-type');
+    const type      = typeEl.options[typeEl.selectedIndex].text;
+    const sex       = document.getElementById('f-sex').value;
+    const age       = document.getElementById('f-age').value;
+    const size      = document.getElementById('f-size').value;
+    const exoticType = document.getElementById('f-exotic-type').value.trim();
+    const msg       = document.getElementById('f-msg').value.trim();
+
+    const especieTxt = type === 'Selecciona una opción' ? '—' : type;
+    const extraFields = typeEl.value === 'exotica'
+      ? `🦎 *Tipo de exótico:* ${exoticType || '—'}\n🎂 *Edad:* ${age || '—'}\n`
+      : `⚥ *Sexo:* ${sex || '—'}\n🎂 *Edad:* ${age || '—'}\n📏 *Tamaño:* ${size || '—'}\n`;
 
     const text =
       `🐾 *Cita - Clínica Veterinaria Alvarez*\n\n` +
       `👤 *Propietario:* ${name || '—'}\n` +
       `🐶 *Mascota:* ${pet || '—'}\n` +
-      `🏷️ *Especie:* ${type === 'Selecciona una opción' ? '—' : type}\n` +
-      `⚥ *Sexo:* ${sex || '—'}\n` +
-      `🎂 *Edad:* ${age || '—'}\n` +
-      `📏 *Tamaño:* ${size || '—'}\n` +
+      `🏷️ *Especie:* ${especieTxt}\n` +
+      extraFields +
       `📋 *Motivo:* ${msg || '—'}`;
 
-    const url = `https://wa.me/51956662849?text=${encodeURIComponent(text)}`;
+    const phone = typeEl.value === 'exotica' ? '51998417342' : '51956662849';
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank', 'noopener');
 
     const btn = contactForm.querySelector('.form-btn');
@@ -268,12 +273,23 @@ if (chips.length && msgArea) {
 }
 
 /* ── CAMPOS EXTRA MASCOTA ────────────────────────── */
-const petInput  = document.getElementById('f-pet');
-const petExtra  = document.getElementById('petExtra');
-if (petInput && petExtra) {
-  petInput.addEventListener('input', () => {
-    petExtra.classList.toggle('visible', petInput.value.trim().length > 0);
-  });
+const petInput           = document.getElementById('f-pet');
+const petExtra           = document.getElementById('petExtra');
+const typeSelect         = document.getElementById('f-type');
+const petNonExoticFields = document.getElementById('petNonExoticFields');
+const exoticTypeGroup    = document.getElementById('exoticTypeGroup');
+
+function updatePetExtra() {
+  const hasName   = petInput.value.trim().length > 0;
+  const isExotica = typeSelect.value === 'exotica';
+  petExtra.classList.toggle('visible', hasName);
+  if (petNonExoticFields) petNonExoticFields.style.display = isExotica ? 'none' : '';
+  if (exoticTypeGroup)    exoticTypeGroup.style.display    = isExotica ? ''     : 'none';
+}
+
+if (petInput && petExtra && typeSelect) {
+  petInput.addEventListener('input', updatePetExtra);
+  typeSelect.addEventListener('change', updatePetExtra);
 }
 
 /* ── MAPA FACADE ─────────────────────────────────── */
